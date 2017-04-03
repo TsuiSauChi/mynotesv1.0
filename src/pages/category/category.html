@@ -1,0 +1,22 @@
+<!--
+  Generated template for the Category page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="AddCategory()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+</ion-header>
+
+
+<ion-content padding>
+  <h1>Notes</h1>
+  <hr/>
+   <ion-col width-33 *ngFor="let category of categories">
+      <img class ="imageicon" src="{{category.Image}}" (click)="test($event, category)" (press)="editcategory(category, category.$key)" />
+   </ion-col>
+</ion-content>

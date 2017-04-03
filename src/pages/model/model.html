@@ -1,0 +1,37 @@
+<!--
+  Generated template for the Model page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="form" (ngSubmit)="saveCategory(form.value)">
+  
+  <img class ="imageicon2" [src]="base64Image" *ngIf="base64Image" (click)="selectImage()"/>
+  <input type="hidden" name="image" formControlName="image" [(ngModel)]="base64Image">
+
+  <ion-list>
+    <ion-item  *ngIf="!isEditable">
+      Add Category
+    </ion-item>
+    <ion-item  *ngIf="isEditable">
+      Edit Category
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" formControlName="title" [(ngModel)]="categorytitle" placeholder="category"></ion-input>
+    </ion-item>
+  </ion-list>
+    
+  <div padding>
+    <button ion-button full round type="submit" value="submit">Save</button>
+  </div>
+  </form>
+</ion-content>
